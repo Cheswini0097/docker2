@@ -4,7 +4,7 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
-RUN 1  python setup.py bdist_wheel
+RUN python setup.py bdist_wheel
 
 # Production stage
 FROM nginx:alpine
