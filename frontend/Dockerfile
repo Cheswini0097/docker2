@@ -1,3 +1,4 @@
-FROM nginx
-RUN rm -rf /usr/share/nginx/html/
+FROM nginx:mainline-alpine3.20-slim
+RUN rm -rf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY code /usr/share/nginx/html
