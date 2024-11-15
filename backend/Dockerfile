@@ -5,5 +5,5 @@ WORKDIR /opt/server
 COPY package.json .
 COPY *.js .
 RUN npm install
-ENV DB_HOST="mysqlcont"
+ENV DB_HOST="localhost"
 CMD [ "node", "index.js" ]
