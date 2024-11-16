@@ -1,22 +1,25 @@
 version: "3"
 networks:
- expense:
+  expense:
 volumes:
- mysql:
+  mysql:
 services:
   mysql:
-   image_name: chethankumar6/mysql
-   container_name: mysql
-   volume:
-   - mysql: /var/lib/mysql
+    image_name: chethankumar6/mysql
+    container_name: mysql
+    volume:
+    - mysql: /var/lib/mysql
   backend:
-   image_name: chethankumar6/backend
-   container_name: backend
-   command: sh -c "sleep 5 && node /opt/server/index.js"
-   depends_on:
-   - mysql
+    image_name: chethankumar6/backend
+    container_name: backend
+    command: sh -c "sleep 5 && node /opt/server/index.js"
+    depends_on:
+    - mysql
   frontend:
-   image_name: chethankumar6/frontend
-   container_name: frontend
-   depends_on:
-   - backend
+    image_name: chethankumar6/frontend
+    container_name: frontend
+    depends_on:
+    ports:
+    - 80:80
+    depends_on:
+    - backend
