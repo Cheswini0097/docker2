@@ -5,4 +5,4 @@ RUN mkdir /opt/server
 WORKDIR /opt/server
 COPY package.json .
 COPY *.js .
-CMD [ "node","index.js" ]
+CMD ["node","index.js"]
