@@ -14,7 +14,7 @@ RUN rm -rf /etc/nginx/nginx.conf && \
     chown -R nginx:nginx /var/run/nginx.pid /run/nginx.pid
 COPY code /usr/share/nginx//html
 COPY nginx.conf /etc/nginx/nginx.conf
-USER expense
+USER nginx
 
 
 
